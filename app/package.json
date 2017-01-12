@@ -1,0 +1,10 @@
+{
+  "name": "electron-react-boilerplate",
+  "version": "0.1.0",
+  "description": "Boilerplate for starting an electron app using react",
+  "main": "main.js",
+  "author": "pieval",
+  "license": "MIT",
+  "dependencies": {
+  }
+}
