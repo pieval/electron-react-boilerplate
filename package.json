@@ -1,16 +1,18 @@
 {
   "name": "electron-react-boilerplate",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "description": "Boilerplate for starting an electron app using react",
-  "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron ./app/",
+    "dev": "node server.js"
   },
   "repository": "https://github.com/pieval/electron-react-boilerplate.git",
   "keywords": [
     "Electron",
     "React",
-    "Boilerplate"
+    "Boilerplate",
+    "Webpack2",
+    "HMR"
   ],
   "author": "pieval",
   "license": "MIT",
@@ -18,20 +20,21 @@
     "babel-core": "^6.21.0",
     "babel-eslint": "^7.1.1",
     "babel-loader": "^6.2.10",
+    "babel-polyfill": "^6.20.0",
     "babel-preset-es2015": "^6.18.0",
     "babel-preset-react": "^6.16.0",
     "babel-preset-stage-0": "^6.16.0",
-    "clean-webpack-plugin": "^0.1.15",
-    "electron": "^1.4.1",
-    "webpack": "^1.14.0",
+    "electron": "^1.4.15",
+    "express": "^4.14.0",
+    "react-hot-loader": "^3.0.0-beta.6",
+    "webpack": "^2.2.0",
     "webpack-dev-middleware": "^1.9.0",
-    "webpack-hot-middleware": "^2.13.2",
-    "webpack-merge": "^1.1.2",
-    "webpack-target-electron-renderer": "^0.4.0",
+    "webpack-hot-middleware": "^2.15.0",
+    "webpack-merge": "^2.4.0",
     "webpack-validator": "^2.3.0"
   },
   "dependencies": {
-    "react": "^15.4.1",
-    "react-dom": "^15.4.1"
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
   }
 }
