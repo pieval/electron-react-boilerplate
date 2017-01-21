@@ -1,24 +1,26 @@
-var webpack = require('webpack')
-var config = require('./webpack.dev.config')
+/* eslint no-console: 0 */
+/* eslint import/no-extraneous-dependencies: ["error", {"devDependencies": true}]*/
 
-var express = require('express')
-var app = express()
-var port = 3000
+const webpack = require('webpack');
+const config = require('./webpack.dev.config');
+const express = require('express');
 
-var compiler = webpack(config);
+const app = express();
+const port = 3000;
 
-  app.use(require('webpack-dev-middleware')(compiler, {
-      publicPath: config.output.publicPath,
-      historyApiFallback: true,
-      stats: { colors: true }
-    }
-    ));
-  app.use(require('webpack-hot-middleware')(compiler));
+const compiler = webpack(config);
 
-app.listen(port, function(error) {
+app.use(require('webpack-dev-middleware')(compiler, {
+  publicPath: config.output.publicPath,
+  historyApiFallback: true,
+  stats: { colors: true },
+}));
+app.use(require('webpack-hot-middleware')(compiler));
+
+app.listen(port, (error) => {
   if (error) {
-    console.error(error)
+    console.error(error);
   } else {
-    console.info("==> 🌎 Listening at http://localhost:%s", port)
+    console.info('==> 🌎 Listening at http://localhost:%s', port);
   }
-})
+});

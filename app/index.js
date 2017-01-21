@@ -5,20 +5,19 @@ import { AppContainer } from 'react-hot-loader';
 import App from './components/App';
 
 render(
-    <AppContainer>
-        <App />
-    </AppContainer>,
-    document.getElementById('root')
+  <AppContainer>
+    <App />
+  </AppContainer>,
+  document.getElementById('root'),
 );
 
 if (module.hot) {
-    module.hot.accept('./components/App', () => {
-        // const NewApp = require('./components/App').default;
-        render(
-            <AppContainer>
-                <App />
-            </AppContainer>,
-            document.getElementById('root')
-        );
-    });
+  module.hot.accept('./components/App', () => {
+    render(
+      <AppContainer>
+        <App />
+      </AppContainer>,
+      document.getElementById('root'),
+    );
+  });
 }
