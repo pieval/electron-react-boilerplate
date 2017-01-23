@@ -2,17 +2,20 @@ import 'babel-polyfill';
 import React from 'react';
 import { render } from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
-import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-import reducers from './redux/reducer';
+import configureStore from './redux/store';
 import App from './components/App';
+import DevTools from './containers/DevTools';
 
-const store = createStore(reducers);
-
+// TODO manage production/dev changes when adding the production webpack config.
+const store = configureStore();
 render(
   <AppContainer>
     <Provider store={store} >
-      <App />
+      <div>
+        <App />
+        <DevTools />
+      </div>
     </Provider>
   </AppContainer>,
   document.getElementById('root'),
@@ -23,7 +26,10 @@ if (module.hot) {
     render(
       <AppContainer>
         <Provider store={store} >
-          <App />
+          <div>
+            <App />
+            <DevTools />
+          </div>
         </Provider>
       </AppContainer>,
       document.getElementById('root'),
