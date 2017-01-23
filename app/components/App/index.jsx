@@ -1,11 +1,14 @@
 import React from 'react';
+import SyncCounter from '../../containers/Counter';
 
 export default () =>
   <div>
     <div>
-      Hello World from react App.
+      <h1>React App renderer</h1>
+      <p style={{ color: 'green' }}>change text or style color in dev mode to see hot reloading</p>
     </div>
     <div>
-      <span style={{ color: 'green' }}> change style color to see hot reloading </span>
+      <h2>React Redux integration</h2>
+      <SyncCounter />
     </div>
   </div>;
